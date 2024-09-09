@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+let round = 1;
 
 
 
@@ -43,12 +44,37 @@ function playRound(humanChoice, computerChoice) {
     } else {
         console.log("Tie round, try again.")
     }
+
         
 
 }
 
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
+function playgame() {
+   console.log("Round " + round++)
+   playRound(getHumanChoice(), getComputerChoice());
+   console.log("Round " + round++)
+   playRound(getHumanChoice(), getComputerChoice());
+   console.log("Round " + round++)
+   playRound(getHumanChoice(), getComputerChoice());
+   console.log("Round " + round++)
+   playRound(getHumanChoice(), getComputerChoice());
+   console.log("Round " + round++)
+   playRound(getHumanChoice(), getComputerChoice());
 
-playRound(humanSelection, computerSelection);
+
+   if (humanScore > computerScore) {
+    console.log("You win the game!")
+   } else if (computerScore > humanScore) {
+    console.log("You lose the game!")
+   } else {
+    console.log("Tie game!")
+   }
+   
+   
+
+
+}
+
+
+playgame();
 
