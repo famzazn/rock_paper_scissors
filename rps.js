@@ -41,7 +41,10 @@ function playRound(humanChoice, computerChoice) {
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
         console.log("You win! Scissors beat Paper.")
         humanScore++;
-    } else {
+    } else if (humanChoice !== "scissors" || humanChoice !== "paper" || humanChoice !== "rock") {
+        console.log("Not a valid input")
+    } 
+    else {
         console.log("Tie round, try again.")
     }
 
@@ -52,14 +55,24 @@ function playRound(humanChoice, computerChoice) {
 function playgame() {
    console.log("Round " + round++)
    playRound(getHumanChoice(), getComputerChoice());
+   console.log()
+   console.log("User Score: " + humanScore + " Computer Score: " + computerScore)
+
    console.log("Round " + round++)
    playRound(getHumanChoice(), getComputerChoice());
+   console.log("User Score: " + humanScore + " Computer Score: " + computerScore)
+
    console.log("Round " + round++)
    playRound(getHumanChoice(), getComputerChoice());
+   console.log("User Score: " + humanScore + " Computer Score: " + computerScore)
+
    console.log("Round " + round++)
    playRound(getHumanChoice(), getComputerChoice());
+   console.log("User Score: " + humanScore + " Computer Score: " + computerScore)
+
    console.log("Round " + round++)
    playRound(getHumanChoice(), getComputerChoice());
+   console.log("User Score: " + humanScore + " Computer Score: " + computerScore)
 
 
    if (humanScore > computerScore) {
@@ -74,6 +87,8 @@ function playgame() {
 
 
 }
+
+
 
 
 playgame();
